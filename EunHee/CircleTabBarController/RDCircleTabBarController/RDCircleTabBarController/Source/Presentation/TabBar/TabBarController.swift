@@ -17,7 +17,6 @@ class TabBarController: UITabBarController {
     private lazy var tabs: [UIViewController] = [ ]
     private lazy var plusButton = UIButton().then {
         $0.setBackgroundImage(UIImage(named: "navibar_btn_record"), for: .normal)
-        $0.isEnabled = true
         $0.addTarget(self,
                      action: #selector(presentRecordView),
                      for: .touchUpInside
@@ -30,9 +29,6 @@ class TabBarController: UITabBarController {
         setupConstraint()
         setTabBarItems()
         setTabBarAppearance()
-    }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
         setTabBarFrame()
     }
 }
